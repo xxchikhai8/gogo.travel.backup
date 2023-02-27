@@ -1,0 +1,67 @@
+.toggle {
+    /* margin-left: 10px;
+    margin-right: 10px; */
+    padding-right: 8px;
+}
+
+.headertext {
+    color: white;
+    font-weight: bold;
+    padding-left: 20px;
+    text-decoration: none;
+}
+
+.logo {
+    color: white;
+}
+
+/* header .navbar {
+    --bs-navbar-color: white;
+} */
+
+.headertext-right {
+    padding-right: 12px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+}
+
+.headertext:hover {
+    color:blue;
+    text-decoration: underline;
+}
+
+.headertext.active {
+    text-decoration: underline;
+    text-decoration-color: red;
+}
+
+.textformaf {
+    padding-left: 5px;
+    padding-right: 10x;
+}
+
+#searchform {
+    border: 1px black solid;
+    border-radius: 10px;
+}
+
+#search-button {
+    padding: 8px 40px;
+}
+
+#index-position {
+    margin-top: 15px;
+}
+
+footer {
+    margin-top: 15px ;
+    background-color: black;
+    color: white;
+}
+
+.ticket {
+    margin: 5px 0px 5px 15px;
+    border: 1px black solid;
+    border-radius: 10px;
+}
