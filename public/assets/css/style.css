@@ -27,7 +27,7 @@
 }
 
 .headertext:hover {
-    color:blue;
+    color:red;
     text-decoration: underline;
 }
 
@@ -64,4 +64,9 @@ footer {
     margin: 5px 0px 5px 15px;
     border: 1px black solid;
     border-radius: 10px;
+}
+
+.active {
+    color: red !important;
+    text-decoration: underline;
 }
