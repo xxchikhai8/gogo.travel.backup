@@ -36,4 +36,36 @@
         </div>
     </div>
 </div>
+@if (session('notify') == '0')
+    <script>
+        Swal.fire({
+            title: 'Log in success',
+            icon: 'success',
+            timer: 2000,
+            showConfirmButton: false,
+            allowOutsideClick: false,
+        })
+    </script>
+@endif
+@if (session('notify') == '1')
+                <script>
+                    Swal.fire({
+                        title: 'Sign In Failed!',
+                        icon: 'error',
+                        allowOutsideClick: false,
+                    })
+                </script>
+            @endif
+            @if (session('notify') == '2')
+                <script>
+                    Swal.fire({
+                        title: 'Sign Out Success',
+                        icon: 'success',
+                        timer: 2000,
+                        showConfirmButton: false,
+                        allowOutsideClick: false,
+                    })
+                </script>
+            @endif
+
 @endsection

@@ -1,9 +1,8 @@
 .toggle {
-    /* margin-left: 10px;
-    margin-right: 10px; */
     padding-right: 8px;
 }
 
+/* Header */
 .headertext {
     color: white;
     font-weight: bold;
@@ -15,15 +14,15 @@
     color: white;
 }
 
-/* header .navbar {
-    --bs-navbar-color: white;
-} */
-
 .headertext-right {
     padding-right: 12px;
     font-weight: bold;
     text-decoration: none;
     color: white;
+}
+
+.headertext-right:focus,.headertext-right:hover{
+    color: red;
 }
 
 .headertext:hover {
@@ -41,6 +40,66 @@
     padding-right: 10x;
 }
 
+.dropdown-menu {
+    background-color: rgb(42, 36, 65);
+}
+
+.dropdown-item {
+    font-weight: bold;
+    color: white;
+}
+
+.dropdown-item:hover {
+    background-color:  rgb(42, 36, 65);
+}
+
+.active {
+    color: red !important;
+    text-decoration: underline;
+}
+
+/* Modal of Sign In and Sign Up  */
+
+.rolebutton {
+    width: 60%;
+}
+
+.rolebutton label {
+    font-weight: bold;
+}
+
+.btn-check:checked+.btn,.btn.active{
+    font-weight: bold;
+    justify-content: center;
+    border-color: blue;
+    background-color: blue;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+.button {
+    background-color: dodgerblue;}
+
+.button:hover {
+    background-color: blue;
+ }
+
+.buttons {
+    background-color: red;
+}
+
+.buttons:hover {
+    background-color: darkred;
+}
+
+#enterprise {
+    display: none;
+}
+
+/* Body */
 #searchform {
     border: 1px black solid;
     border-radius: 10px;
@@ -60,26 +119,14 @@
     border-radius: 10px;
 }
 
-.active {
-    color: red !important;
-    text-decoration: underline;
+.layouts {
+    margin-top: 2%;
+    margin-bottom: 1%;
+    border-bottom: 1.5px solid black;
 }
 
-.button {
-    background-color: dodgerblue;}
 
-.button:hover {
-    background-color: blue;
- }
-
-.buttons {
-    background-color: red;
-}
-
-.buttons:hover {
-    background-color: darkred;
-}
-
+/* Footer */
 footer {
     margin-top: 15px ;
     background-color: black;

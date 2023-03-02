@@ -15,3 +15,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [MainController::class, 'index']);
+Route::get('/history', [MainController::class, 'index']);
+Route::post('/', [MainController::class, 'signin']);
+Route::get('/sign-out', [MainController::class, 'signout']);

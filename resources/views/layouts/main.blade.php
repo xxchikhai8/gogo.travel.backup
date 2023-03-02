@@ -7,6 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.js"
         integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.2/dist/sweetalert2.all.min.js"
+        integrity="sha256-5WYg3s9NxGKR2MpEBTy0QMT3Gvgxl3yKjbW4l0CfUUY=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.3.0/js/all.min.js"
+        integrity="sha256-+rLIGHyZHBDebNqckORMwB+/ueJuy2RqFcYAYlhjkCs=" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="/assets/css/style.css">
@@ -29,69 +33,71 @@
                             class="h2 mb-0">GoGo Travel</span></a>
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link" href="/">Home</a>
+                            <a class="nav-link headertext" href="/">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/history">History</a>
+                            <a class="nav-link headertext" href="/history">History</a>
                         </li>
                     </ul>
-                    @guest
-                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                            <li class="nav-item">
-                                <a class="nav-link" data-bs-toggle="modal" data-bs-target="#sign-in-modal"
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        @guest
+                            <li class="nav-item ">
+                                <a class="nav-link headertext-right" data-bs-toggle="modal" data-bs-target="#sign-in-modal"
                                     type="button">Sign In</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" data-bs-toggle="modal" data-bs-target="#sign-up-modal"
+                                <a class="nav-link headertext-right" data-bs-toggle="modal" data-bs-target="#sign-up-modal"
                                     type="button">Sign Up</a>
                             </li>
-                        </ul>
-                    @endguest
-                    @auth
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle headertext-right" data-bs-toggle="dropdown"> Hi,
-                                xxchikhai8</a>
-                            <ul class="dropdown-menu dropdown-menu-lg-end">
-                                <li><a class="dropdown-item">Account</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item">Sign out</a></li>
-                            </ul>
-                        </li>
-                    @endauth
+                        @endguest
+                        @auth
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle headertext-right" data-bs-toggle="dropdown"><i
+                                        class="fa-solid fa-user"></i> Hi,
+                                    {{ Auth::user()->username }}</a>
+                                <ul class="dropdown-menu dropdown-menu-lg-end">
+                                    <li><a class="dropdown-item">Account</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a href="/sign-out" class="dropdown-item">Sign out</a></li>
+                                </ul>
+                            </li>
+                        @endauth
+                    </ul>
                 </div>
             </div>
             <div class="modal fade" id="sign-in-modal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-lg modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="ModalLabel">Sign In to GoGo Travel</h1>
+                            <h1 class="modal-title fs-5 fw-bold" id="ModalLabel">Sign In to GoGo Travel</h1>
                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                 aria-label="Close"></button>
                         </div>
-                        <form action="/sign-in" method="POST">
+                        <form action="/" method="POST">
                             @csrf
                             <div class="modal-body">
-                                {{-- ... --}}
+
                                 <div class="form-floating mb-3">
                                     <input type="text" name="username" class="form-control border border-dark"
-                                        id="floatingInput" placeholder="Username">
-                                    <label for="floatingInput">Username</label>
+                                        id="signinInput" placeholder="Username">
+                                    <label for="signinInput"><i class="fa-solid fa-user"></i> Username</label>
                                 </div>
                                 <div class="form-floating mb-3">
                                     <input type="password" name="password" class="form-control border border-dark"
-                                        id="floatingPassword" placeholder="Password">
-                                    <label for="floatingPassword">Password</label>
+                                        id="signinPassword" placeholder="Password">
+                                    <label for="signinPassword"><i class="fa-solid fa-unlock-keyhole"></i> Password</label>
                                 </div>
                                 <div>
                                     <h6>New to GoGo Travel! <a role="button" data-bs-toggle="modal"
-                                            data-bs-target="#sign-up-modal" class="text-underline">
-                                            Create an account.</a></h6>
+                                            data-bs-target="#sign-up-modal" class="text-underline"> Create an
+                                            account.</a></h6>
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary buttons" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-secondary buttons"
+                                    data-bs-dismiss="modal">Close</button>
                                 <button type="submit" class="btn btn-primary button">Sign In</button>
                             </div>
                         </form>
@@ -103,17 +109,51 @@
                 <div class="modal-dialog modal-lg modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="ModalLabel">Sign Up to GoGo Travel</h1>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            <h1 class="modal-title fs-5 fw-bold" id="ModalLabel">Sign Up to GoGo Travel</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                aria-label="Close"></button>
                         </div>
                         <form action="/sign-up" method="POST">
                             @csrf
                             <div class="modal-body">
-                                {{-- ... --}}
+                                <div class="center">
+                                    <div class="btn-group rolebutton" role="group"
+                                        aria-label="Basic radio toggle button group">
+                                        <input type="radio" class="btn-check" name="btnradio" value="customer"
+                                            id="btnradio1" autocomplete="off" checked>
+                                        <label class="btn btn-outline-primary" for="btnradio1">Customer</label>
+                                        <input type="radio" class="btn-check" name="btnradio" value="enterprise"
+                                            id="btnradio2" autocomplete="off">
+                                        <label class="btn btn-outline-primary" for="btnradio2">Enterprise</label>
+                                    </div>
+                                </div>
+                                <div class="layouts divider">
+                                </div>
+                                <div>
+                                    <div class="form-floating mb-3">
+                                        <input type="text" name="username" class="form-control border border-dark"
+                                            id="floatingInput" placeholder="Username">
+                                        <label for="floatingInput">Username</label>
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                        <input type="password" name="password"
+                                            class="form-control border border-dark" id="floatingPassword"
+                                            placeholder="Password">
+                                        <label for="floatingPassword">Password</label>
+                                    </div>
+                                    <div class="form-floating mb-3" id="enterprise">
+                                        <input type="text" name="enterprise"
+                                            class="form-control border border-dark" id="enterpriseNumber"
+                                            placeholder="Enterprise Number">
+                                        <label id="enterpriseNumber" for="enterprise">Enterprise Number</label>
+                                    </div>
+                                </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary buttons" data-bs-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-secondary button" data-bs-toggle="modal" data-bs-target="#sign-in-modal">Sign In</button>
+                                <button type="button" class="btn btn-secondary buttons"
+                                    data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-secondary button" data-bs-toggle="modal"
+                                    data-bs-target="#sign-in-modal">Sign In</button>
                                 <button type="submit" class="btn btn-primary button">Sign Up</button>
                             </div>
                         </form>
@@ -136,16 +176,6 @@
             <span>2023 &copy; GoGo Travel</span>
         </div>
     </footer>
-    <script>
-        $(function() {
-            var path = window.location.href;
-            $('a.nav-link').each(function() {
-                if (this.href === path) {
-                    $(this).addClass('active');
-                }
-            });
-        });
-    </script>
 </body>
-
+<script src="/assets/js/index.js"></script>
 </html>
