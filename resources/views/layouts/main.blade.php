@@ -36,31 +36,29 @@
                         </li>
                     </ul>
                     @guest
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link" data-bs-toggle="modal" data-bs-target="#sign-in-modal"
-                                type="button">Sign
-                                in</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" data-bs-toggle="modal" data-bs-target="#sign-up-modal"
-                                type="button">Sign
-                                up</a>
-                        </li>
-                    </ul>
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link" data-bs-toggle="modal" data-bs-target="#sign-in-modal"
+                                    type="button">Sign In</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-bs-toggle="modal" data-bs-target="#sign-up-modal"
+                                    type="button">Sign Up</a>
+                            </li>
+                        </ul>
                     @endguest
                     @auth
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle headertext-right" data-bs-toggle="dropdown"> Hi,
-                            xxchikhai8</a>
-                        <ul class="dropdown-menu dropdown-menu-lg-end">
-                            <li><a class="dropdown-item">Account</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item">Sign out</a></li>
-                        </ul>
-                    </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle headertext-right" data-bs-toggle="dropdown"> Hi,
+                                xxchikhai8</a>
+                            <ul class="dropdown-menu dropdown-menu-lg-end">
+                                <li><a class="dropdown-item">Account</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item">Sign out</a></li>
+                            </ul>
+                        </li>
                     @endauth
                 </div>
             </div>
@@ -68,42 +66,57 @@
                 <div class="modal-dialog modal-lg modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="ModalLabel">Sign in</h1>
+                            <h1 class="modal-title fs-5" id="ModalLabel">Sign In to GoGo Travel</h1>
                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                 aria-label="Close"></button>
                         </div>
-                        <div class="modal-body">
-                            {{-- ... --}}
-                            <div>
-                                <h6>New to GoGo Travel! <a role="button" data-bs-toggle="modal"
-                                        data-bs-target="#sign-up-modal" class="text-underline">
-                                        Create an account.</a></h6>
+                        <form action="/sign-in" method="POST">
+                            @csrf
+                            <div class="modal-body">
+                                {{-- ... --}}
+                                <div class="form-floating mb-3">
+                                    <input type="text" name="username" class="form-control border border-dark"
+                                        id="floatingInput" placeholder="Username">
+                                    <label for="floatingInput">Username</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="password" name="password" class="form-control border border-dark"
+                                        id="floatingPassword" placeholder="Password">
+                                    <label for="floatingPassword">Password</label>
+                                </div>
+                                <div>
+                                    <h6>New to GoGo Travel! <a role="button" data-bs-toggle="modal"
+                                            data-bs-target="#sign-up-modal" class="text-underline">
+                                            Create an account.</a></h6>
+                                </div>
                             </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-primary">Sign in</button>
-                        </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary buttons" data-bs-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary button">Sign In</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
-            <div class="modal fade" id="sign-up-modal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+            <div class="modal fade" id="sign-up-modal" tabindex="-1" aria-labelledby="ModalLabel"
+                aria-hidden="true">
                 <div class="modal-dialog modal-lg modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="ModalLabel">Sign up</h1>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                aria-label="Close"></button>
+                            <h1 class="modal-title fs-5" id="ModalLabel">Sign Up to GoGo Travel</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <div class="modal-body">
-                            {{-- ... --}}
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-secondary" data-bs-toggle="modal"
-                                data-bs-target="#sign-in-modal">Sign in</button>
-                            <button type="submit" class="btn btn-primary">Sign up</button>
-                        </div>
+                        <form action="/sign-up" method="POST">
+                            @csrf
+                            <div class="modal-body">
+                                {{-- ... --}}
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary buttons" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-secondary button" data-bs-toggle="modal" data-bs-target="#sign-in-modal">Sign In</button>
+                                <button type="submit" class="btn btn-primary button">Sign Up</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -116,7 +129,8 @@
     </main>
     <footer class="mt-auto p-4 text-bg-dark">
         <div class="row mb-2 text-center d-flex align-items-center">
-            <span><img src="/assets/img/GoGoLogo.svg" width="48px" height="48px" class="me-2"><span class="mb-0 h4">GoGo Travel</span></span>
+            <span><img src="/assets/img/GoGoLogo.svg" width="48px" height="48px" class="me-2"><span
+                    class="mb-0 h4">GoGo Travel</span></span>
         </div>
         <div class="row text-center">
             <span>2023 &copy; GoGo Travel</span>
