@@ -176,6 +176,6 @@
             <span>2023 &copy; GoGo Travel</span>
         </div>
     </footer>
+    <script src="/assets/js/index.js"></script>
 </body>
-<script src="/assets/js/index.js"></script>
 </html>

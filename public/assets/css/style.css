@@ -50,7 +50,8 @@
 }
 
 .dropdown-item:hover {
-    background-color:  rgb(42, 36, 65);
+    background-color: rgb(42, 36, 65);
+    color:  red;
 }
 
 .active {
