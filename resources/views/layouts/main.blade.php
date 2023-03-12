@@ -78,7 +78,6 @@
                         <form action="/" method="POST">
                             @csrf
                             <div class="modal-body">
-
                                 <div class="form-floating mb-3">
                                     <input type="text" name="username" class="form-control border border-dark"
                                         id="signinInput" placeholder="Username">
@@ -133,19 +132,43 @@
                                     <div class="form-floating mb-3">
                                         <input type="text" name="username" class="form-control border border-dark"
                                             id="floatingInput" placeholder="Username">
-                                        <label for="floatingInput">Username</label>
+                                        <label for="floatingInput"><i class="fa-solid fa-user"></i> Username</label>
                                     </div>
                                     <div class="form-floating mb-3">
                                         <input type="password" name="password"
                                             class="form-control border border-dark" id="floatingPassword"
                                             placeholder="Password">
-                                        <label for="floatingPassword">Password</label>
+                                        <label for="floatingPassword"><i class="fa-solid fa-unlock-keyhole"></i> Password</label>
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                        <input type="password" name="confpassword"
+                                            class="form-control border border-dark" id="floatingPassword"
+                                            placeholder="Confirm Password">
+                                        <label for="floatingPassword"><i class="fa-solid fa-unlock-keyhole"></i> Confirm Password</label>
                                     </div>
                                     <div class="form-floating mb-3" id="enterprise">
                                         <input type="text" name="enterprise"
                                             class="form-control border border-dark" id="enterpriseNumber"
                                             placeholder="Enterprise Number">
-                                        <label id="enterpriseNumber" for="enterprise">Enterprise Number</label>
+                                        <label id="enterpriseNumber" for="enterprise"><i class="fa-solid fa-building"></i> Enterprise Number</label>
+                                    </div>
+                                    <div class="form-floating mb-3" id="enterprise">
+                                        <input type="text" name="airlineName"
+                                            class="form-control border border-dark" id="enterpriseNumber"
+                                            placeholder="Airline Name">
+                                        <label id="enterpriseNumber" for="enterprise"><i class="fa-solid fa-plane"></i> Airline Name</label>
+                                    </div>
+                                    <div class="form-floating mb-3" id="enterprise">
+                                        <input type="text" name="airlineCode"
+                                            class="form-control border border-dark" id="enterpriseNumber"
+                                            placeholder="Airline Code">
+                                        <label id="enterpriseNumber" for="enterprise"><i class="fa-solid fa-barcode"></i> Airline Code</label>
+                                    </div>
+                                    <div class="form-floating mb-3" id="enterprise">
+                                        <input type="text" name="nation"
+                                            class="form-control border border-dark" id="enterpriseNumber"
+                                            placeholder="Nation">
+                                        <label id="enterpriseNumber" for="enterprise"><i class="fa-solid fa-globe"></i> Nation</label>
                                     </div>
                                 </div>
                             </div>
@@ -163,7 +186,7 @@
         </nav>
     </header>
     <main class="flex-shrink-0">
-        <div class="container p-2 mb-4">
+        <div class="container-fluid mb-4">
             @yield('content')
         </div>
     </main>
