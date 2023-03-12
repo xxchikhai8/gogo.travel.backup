@@ -126,6 +126,13 @@
     border-bottom: 1.5px solid black;
 }
 
+#border-transparent {
+    border-color: transparent;
+}
+
+#ticket-border:hover{
+    border-color:red !important;
+}
 
 /* Footer */
 footer {
