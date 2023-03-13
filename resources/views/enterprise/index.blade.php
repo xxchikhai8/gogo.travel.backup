@@ -4,7 +4,8 @@
 @if (session('notify')=='enterprise')
     <script>
         Swal.fire({
-            title: 'Sign In Successfull! Welcome Back.',
+            title: 'Sign In Successfull!',
+            text: 'Welcome Back.',
             icon: 'success',
             timer: 2000,
             showConfirmButton: false,

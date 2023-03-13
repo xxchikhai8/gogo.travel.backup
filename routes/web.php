@@ -1,6 +1,10 @@
 <?php
 
+use App\Http\Controllers\EnterpriseController;
 use App\Http\Controllers\MainController;
+use App\Http\Controllers\TicketController;
+use App\Http\Controllers\AdminController;
+use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,4 +21,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [MainController::class, 'index']);
 Route::get('/history', [MainController::class, 'index']);
 Route::post('/', [MainController::class, 'signin']);
-Route::get('/sign-out', [MainController::class, 'signout']);
+Route::get('/booking-ticket', [TicketController::class, 'index']);
+Route::group(['Middleware' => ['auth']], function () {
+    Route::get('/sign-out', [MainController::class, 'signout']);
+    Route::get('/enterprise', [EnterpriseController::class, 'index']);
+    Route::get('/admin', [AdminController::class, 'index']);
+    Route::get('/booking', [TicketController::class, 'booking']);
+});
