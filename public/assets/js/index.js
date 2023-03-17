@@ -9,7 +9,7 @@ $(function() {
 
 $("input[type=radio]").on('change', function () {
     var i = $('input:checked').val();
-    if (i == "customer") {
+    if (i == "user") {
         $('div.form-floating#enterprise').hide()
     }
     else {
