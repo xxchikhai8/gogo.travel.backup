@@ -15,4 +15,6 @@ class Airlines extends Model
         'enterpriseNum',
         'Nation',
     ];
+
+    public $timestamps = false;
 }

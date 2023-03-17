@@ -16,4 +16,6 @@ class Customers extends Model
         'email',
         'DoB',
     ];
+
+    public $timestamps = false;
 }

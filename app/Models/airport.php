@@ -12,4 +12,6 @@ class airport extends Model
         'airportCode',
         'airportName',
     ];
+
+    public $timestamps = false;
 }

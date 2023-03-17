@@ -18,4 +18,6 @@ class Filghts extends Model
         'priceTicket',
         'state',
     ];
+
+    public $timestamps = false;
 }

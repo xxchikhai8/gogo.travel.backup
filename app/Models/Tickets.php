@@ -19,4 +19,6 @@ class Tickets extends Model
         'tiketType',
         'state',
     ];
+
+    public $timestamps = false;
 }

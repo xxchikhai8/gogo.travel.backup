@@ -12,4 +12,6 @@ class Plane extends Model
         'airlineCode',
         'planeID',
     ];
+
+    public $timestamps = false;
 }
