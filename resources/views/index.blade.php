@@ -127,10 +127,41 @@
         })
     </script>
 @endif
+@if (session('notify') == 'exists')
+    <script>
+        Swal.fire({
+            title: 'Sign Up Failed!',
+            text: 'Username Was Exists!',
+            icon: 'error',
+            allowOutsideClick: false,
+        })
+    </script>
+@endif
+@if (session('notify') == 'confPass')
+    <script>
+        Swal.fire({
+            title: 'Sign Up Failed!',
+            text: 'Password and Confirm Password is not match!',
+            icon: 'error',
+            allowOutsideClick: false,
+        })
+    </script>
+@endif
 @if (session('notify') == '2')
     <script>
         Swal.fire({
             title: 'Sign Out Successfull',
+            icon: 'success',
+            timer: 2000,
+            showConfirmButton: false,
+            allowOutsideClick: false,
+        })
+    </script>
+@endif
+@if (session('notify') == 'signupSuccess')
+    <script>
+        Swal.fire({
+            title: 'Sign Up Successfull',
             icon: 'success',
             timer: 2000,
             showConfirmButton: false,

@@ -118,10 +118,10 @@
                                 <div class="center">
                                     <div class="btn-group rolebutton" role="group"
                                         aria-label="Basic radio toggle button group">
-                                        <input type="radio" class="btn-check" name="btnradio" value="customer"
+                                        <input type="radio" class="btn-check" name="role" value="user"
                                             id="btnradio1" autocomplete="off" checked>
                                         <label class="btn btn-outline-primary" for="btnradio1">Customer</label>
-                                        <input type="radio" class="btn-check" name="btnradio" value="enterprise"
+                                        <input type="radio" class="btn-check" name="role" value="enterprise"
                                             id="btnradio2" autocomplete="off">
                                         <label class="btn btn-outline-primary" for="btnradio2">Enterprise</label>
                                     </div>
@@ -147,28 +147,28 @@
                                         <label for="floatingPassword"><i class="fa-solid fa-unlock-keyhole"></i> Confirm Password</label>
                                     </div>
                                     <div class="form-floating mb-3" id="enterprise">
-                                        <input type="text" name="enterprise"
+                                        <input type="text" name="enterpriseNum"
                                             class="form-control border border-dark" id="enterpriseNumber"
                                             placeholder="Enterprise Number">
                                         <label id="enterpriseNumber" for="enterprise"><i class="fa-solid fa-building"></i> Enterprise Number</label>
                                     </div>
                                     <div class="form-floating mb-3" id="enterprise">
                                         <input type="text" name="airlineName"
-                                            class="form-control border border-dark" id="enterpriseNumber"
+                                            class="form-control border border-dark" id="enterpriseName"
                                             placeholder="Airline Name">
-                                        <label id="enterpriseNumber" for="enterprise"><i class="fa-solid fa-plane"></i> Airline Name</label>
+                                        <label id="enterpriseName" for="enterprise"><i class="fa-solid fa-plane"></i> Airline Name</label>
                                     </div>
                                     <div class="form-floating mb-3" id="enterprise">
                                         <input type="text" name="airlineCode"
-                                            class="form-control border border-dark" id="enterpriseNumber"
+                                            class="form-control border border-dark" id="enterpriseCode"
                                             placeholder="Airline Code">
-                                        <label id="enterpriseNumber" for="enterprise"><i class="fa-solid fa-barcode"></i> Airline Code</label>
+                                        <label id="enterpriseCode" for="enterprise"><i class="fa-solid fa-barcode"></i> Airline Code</label>
                                     </div>
                                     <div class="form-floating mb-3" id="enterprise">
                                         <input type="text" name="nation"
-                                            class="form-control border border-dark" id="enterpriseNumber"
+                                            class="form-control border border-dark" id="Nation"
                                             placeholder="Nation">
-                                        <label id="enterpriseNumber" for="enterprise"><i class="fa-solid fa-globe"></i> Nation</label>
+                                        <label id="Nation" for="enterprise"><i class="fa-solid fa-globe"></i> Nation</label>
                                     </div>
                                 </div>
                             </div>

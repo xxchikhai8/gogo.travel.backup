@@ -37,10 +37,10 @@
                             <a class="nav-link headertext" href="/planes">Plane</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link headertext" href="/airport">Airport</a>
+                            <a class="nav-link headertext" href="/ticket">Ticket</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link headertext" href="/ticket">Ticket</a>
+                            <a class="nav-link headertext" href="/statistic">Statistic</a>
                         </li>
                     </ul>
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
@@ -70,7 +70,7 @@
         </div>
     </main>
 
-    <footer>
+    <footer class="mt-auto p-4 text-bg-dark">
         <div class="row mb-2 text-center d-flex align-items-center">
             <span><img src="/assets/img/GoGoLogo.svg" width="48px" height="48px" class="me-2"><span
                     class="mb-0 h4">GoGo Travel</span></span>
