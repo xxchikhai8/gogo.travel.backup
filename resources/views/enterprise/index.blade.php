@@ -32,7 +32,6 @@
                 <td></td>
             </tr>
         @endforeach
-
     </table>
 </div>
 @if (session('notify') == 'enterprise')
