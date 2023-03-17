@@ -20,11 +20,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [MainController::class, 'index']);
 Route::get('/history', [MainController::class, 'index']);
+Route::post('/sign-up', [MainController::class, 'signup']);
 Route::post('/', [MainController::class, 'signin']);
 Route::get('/booking-ticket', [TicketController::class, 'index']);
 Route::group(['Middleware' => ['auth']], function () {
     Route::get('/sign-out', [MainController::class, 'signout']);
     Route::get('/enterprise', [EnterpriseController::class, 'index']);
+    Route::get('/planes', [EnterpriseController::class, 'planelist']);
     Route::get('/admin', [AdminController::class, 'index']);
     Route::get('/booking', [TicketController::class, 'booking']);
 });
