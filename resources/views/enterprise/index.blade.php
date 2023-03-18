@@ -2,6 +2,9 @@
 @section('content')
 @section('title', 'Enterprise Home')
 <div class="mb-3">
+    <div class="mb-3 d-flex justify-content-center">
+        <a href="/new-flight" class="btn btn-primary"><i class="fa-solid fa-plus"></i> New Flight</a>
+    </div>
     <table>
         <tr>
             <th>Flight ID</th>
@@ -29,17 +32,17 @@
                 <?php $money = $flight->priceTicket; setlocale(LC_MONETARY, 'en_US'); ?>
                 <td>$ <?php echo number_format($money); ?></td>
                 <td>{{$flight->state}}</td>
-                <td></td>
+                <td class="text-center"><a href="/update-flight/{{$flight->flightID}}" ><i class="fa-solid fa-pen-to-square"></i></a></td>
             </tr>
         @endforeach
     </table>
 </div>
-@if (session('notify') == 'enterprise')
+@if (session('notify') == '0')
     <script>
         Swal.fire({
             title: 'Sign In Successfull!',
-            text: 'Welcome Back.',
             icon: 'success',
+            text: 'Welcome Back.',
             timer: 2000,
             showConfirmButton: false,
             allowOutsideClick: false,
