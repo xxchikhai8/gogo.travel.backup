@@ -81,7 +81,7 @@ class EnterpriseController extends Controller
         return redirect('/flight')->with('notify', 'updateSuccess');
     }
 
-    public function statistic()
+    public function dashboard()
     {
         return view('enterprise.statistics');
     }
