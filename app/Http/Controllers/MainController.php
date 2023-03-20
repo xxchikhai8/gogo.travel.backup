@@ -22,19 +22,18 @@ class MainController extends Controller
         $this->validate($request, [
             'username' => 'required',
             'password' => 'required'
-        ], [
-            'username.required' => 'erroruser',
-            'password.required' => 'errorpass'
         ]);
         if (Auth::attempt(['username' => $request->username, 'password' => $request->password])) {
-            if (Auth::user()->role == 'admin') {
-                return redirect('/admin')->with('notify', 'admin');
+            if (Auth::user()->role == 'user') {
+                if (Auth::user()->state == 'not active') {
+                    return redirect('/')->with('notify', 'active');
+                } else {
+                    return redirect('/')->with('notify', '0');
+                }
             } else if (Auth::user()->role == 'enterprise') {
-                return redirect('/enterprise')->with('notify', 'enterprise');
-            } else if (Auth::user()->role = 'user' & Auth::user()->state = 'not actived') {
-                return redirect('/')->with('notify', 'active');
-            } else {
-                return redirect('/')->back()->with('notify', '0');
+                return redirect('/flight')->with('notify', '0');
+            } else if (Auth::user()->role == 'admin') {
+                return redirect('/user')->with('notify', 'admin');
             }
         } else {
             return redirect('/')->with('notify', '1');
@@ -46,8 +45,7 @@ class MainController extends Controller
         if ($request->input('password') == $request->input('confpassword')) {
             if (DB::table('users')->where('username', $request->input('username'))->exists()) {
                 return redirect('/')->with('notify', 'exists');
-            }
-            else if ($request->input('role') == 'user') {
+            } else if ($request->input('role') == 'user') {
                 $users = new User;
                 $users->username = $request->input('username');
                 $password = $request->input('password');

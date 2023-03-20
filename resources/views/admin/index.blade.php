@@ -1,4 +1,4 @@
-@extends('layouts.admin');
+@extends('layouts.admin')
 @section('content')
 @section('title', 'Welcome Back Admin')
 @if (session('notify')=='admin')

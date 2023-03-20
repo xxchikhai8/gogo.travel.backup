@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.min.js"
         integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.3.0/js/fontawesome.min.js"
-        integrity="sha256-Mag3WtYiA/1P91Qduc1FKNy/peKn5ptB8b7v7GFu5qQ=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.3.0/js/all.min.js"
+        integrity="sha256-+rLIGHyZHBDebNqckORMwB+/ueJuy2RqFcYAYlhjkCs=" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" href="/assets/css/style.css">
@@ -26,12 +26,12 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-                    <a class="navbar-brand d-flex align-items-center fw-bold" href="/"><img
+                    <a class="navbar-brand d-flex align-items-center fw-bold" href="/flight"><img
                             src="/assets/img/GoGoLogo.svg" width="42px" height="42px" class="me-2"><span
                             class="h2 mb-0">GGT Enterprise</span></a>
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link headertext" href="/enterprise">Flight</a>
+                            <a class="nav-link headertext" href="/flight">Flight</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link headertext" href="/planes">Plane</a>
@@ -40,7 +40,7 @@
                             <a class="nav-link headertext" href="/ticket">Ticket</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link headertext" href="/statistic">Statistic</a>
+                            <a class="nav-link headertext" href="/dashboard"><i class="fa-solid fa-chart-line"></i> Dashboard</a>
                         </li>
                     </ul>
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">

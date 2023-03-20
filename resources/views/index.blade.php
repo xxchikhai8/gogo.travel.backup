@@ -50,7 +50,7 @@
                                     setlocale(LC_MONETARY, 'en_US'); ?>
                                     <h6>Price: $<?php echo number_format($money); ?></h6>
                                 </div>
-                                <a href="booking-ticket" class="stretched-link"></a>
+                                <a href="booking-ticket/{{$flight->flightID}}" class="stretched-link"></a>
                             </div>
                             <?php $date = new DateTimeImmutable($flight->departDay); ?>
                             <h6>Daparment Day: <?php echo date_format($date, 'd M Y'); ?> - Filght Time: {{ $flight->flightTime }} hours</h5>
@@ -105,7 +105,7 @@
             timer: 2000,
             showConfirmButton: false,
             allowOutsideClick: false,
-        })
+        });
     </script>
 @endif
 @if (session('notify') == 'active')
@@ -115,7 +115,7 @@
             text: 'You Have Deleted This Account'
             icon: 'error',
             allowOutsideClick: false,
-        })
+        });
     </script>
 @endif
 @if (session('notify') == '1')
@@ -124,7 +124,7 @@
             title: 'Sign In Failed!',
             icon: 'error',
             allowOutsideClick: false,
-        })
+        });
     </script>
 @endif
 @if (session('notify') == 'exists')
@@ -134,7 +134,7 @@
             text: 'Username Was Exists!',
             icon: 'error',
             allowOutsideClick: false,
-        })
+        });
     </script>
 @endif
 @if (session('notify') == 'confPass')
@@ -144,7 +144,7 @@
             text: 'Password and Confirm Password is not match!',
             icon: 'error',
             allowOutsideClick: false,
-        })
+        });
     </script>
 @endif
 @if (session('notify') == '2')
@@ -155,7 +155,7 @@
             timer: 2000,
             showConfirmButton: false,
             allowOutsideClick: false,
-        })
+        });
     </script>
 @endif
 @if (session('notify') == 'signupSuccess')
@@ -166,7 +166,7 @@
             timer: 2000,
             showConfirmButton: false,
             allowOutsideClick: false,
-        })
+        });
     </script>
 @endif
 @endsection
